@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ec303cc8dc954b34b668a93ef417bb4b" Name="Diagram1">
+        <EntityTypeShape EntityType="EcommerceModel.C__MigrationHistory" Width="1.5" PointX="7.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="EcommerceModel.AspNetRoles" Width="1.5" PointX="10.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EcommerceModel.AspNetUserClaims" Width="1.5" PointX="15.25" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EcommerceModel.AspNetUserLogins" Width="1.5" PointX="15.25" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EcommerceModel.AspNetUsers" Width="1.5" PointX="13" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EcommerceModel.Catalogos" Width="1.5" PointX="0.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EcommerceModel.Clientes" Width="1.5" PointX="3.75" PointY="20.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EcommerceModel.Compras" Width="1.5" PointX="3" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EcommerceModel.DetalleCompras" Width="1.5" PointX="5.25" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="EcommerceModel.DetalleVentas" Width="1.5" PointX="8.25" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="EcommerceModel.Devoluciones" Width="1.5" PointX="8.25" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EcommerceModel.Empleados" Width="1.5" PointX="10.75" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="EcommerceModel.Envios" Width="1.5" PointX="1.5" PointY="26.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EcommerceModel.Facturas" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EcommerceModel.Historial_prudcto" Width="1.5" PointX="5.25" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EcommerceModel.Orden_pago" Width="1.5" PointX="8.25" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EcommerceModel.Pagos" Width="1.5" PointX="8.25" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EcommerceModel.Paqueterias" Width="1.5" PointX="1.5" PointY="22.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EcommerceModel.Pedidos" Width="1.5" PointX="3.75" PointY="25.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EcommerceModel.Pedidos_Productos" Width="1.5" PointX="5.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EcommerceModel.Pedidos_provedores" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EcommerceModel.Productos" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="EcommerceModel.Provedores" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EcommerceModel.Ventas" Width="1.5" PointX="6" PointY="21" IsExpanded="true" />
+        <AssociationConnector Association="EcommerceModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="EcommerceModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="EcommerceModel.FK__Pagos__Id_usuari__09746778" ManuallyRouted="false" />
+        <AssociationConnector Association="EcommerceModel.FK_dbo_Ventas_dbo_Clientes_Cliente_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="EcommerceModel.FK_dbo_Compras_dbo_Provedores_Provedores_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="EcommerceModel.FK_dbo_DetalleCompras_dbo_Compras_Compras_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="EcommerceModel.FK_dbo_DetalleCompras_dbo_Productos_Productos_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="EcommerceModel.FK_dbo_DetalleVentas_dbo_Productos_Producto_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="EcommerceModel.FK_dbo_DetalleVentas_dbo_Ventas_Ventas_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="EcommerceModel.FK__Devolucio__Id_pe__52E34C9D" ManuallyRouted="false" />
+        <AssociationConnector Association="EcommerceModel.FK__Envios__id_paque__3E1D39E1" ManuallyRouted="false" />
+        <AssociationConnector Association="EcommerceModel.FK__Pedidos__id_envi__40F9A68C" ManuallyRouted="false" />
+        <AssociationConnector Association="EcommerceModel.FK__Facturas__Id_ped__634EBE90" ManuallyRouted="false" />
+        <AssociationConnector Association="EcommerceModel.FK__Facturas__Id_pro__625A9A57" ManuallyRouted="false" />
+        <AssociationConnector Association="EcommerceModel.FK__Orden_pag__Id_fa__756D6ECB" ManuallyRouted="false" />
+        <AssociationConnector Association="EcommerceModel.FK__Pagos__Id_factur__0880433F" ManuallyRouted="false" />
+        <AssociationConnector Association="EcommerceModel.FK_dbo_historial_idproducto" ManuallyRouted="false" />
+        <AssociationConnector Association="EcommerceModel.FK__Orden_pag__Id_pr__76619304" ManuallyRouted="false" />
+        <AssociationConnector Association="EcommerceModel.FK__Pagos__Id_pedido__0A688BB1" ManuallyRouted="false" />
+        <AssociationConnector Association="EcommerceModel.FK__Pedidos_P__Id_Pe__43D61337" ManuallyRouted="false" />
+        <AssociationConnector Association="EcommerceModel.FK__Pedidos_P__Id_Pr__2CBDA3B5" ManuallyRouted="false" />
+        <AssociationConnector Association="EcommerceModel.FK__Pedidos_p__Id_pr__47A6A41B" ManuallyRouted="false" />
+        <AssociationConnector Association="EcommerceModel.AspNetUserRoles" ManuallyRouted="false" />
+        <AssociationConnector Association="EcommerceModel.ProductosCatalogos" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

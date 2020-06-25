@@ -1,0 +1,64 @@
+﻿
+@model IEnumerable<Ecommerce.Models.Devoluciones>
+@{
+    ViewBag.Title = "autorizarDevolucion";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container-fluid mt--6">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <!-- Card header -->
+                <div class="card-header border-0">
+                    <h3 class="mb-0">Devoluciones por autorizar</h3>
+                </div>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID devolucion</th>
+                                <th scope="col">Cliente</th>
+                                <th scope="col">Total</th>
+                                <th scope="col">Fecha</th>
+                                <th scope="col">Razón</th>
+                                <th scope="col">Detalle</th>
+                                <th scope="col">Observaciones</th>
+                                <th scope="col">Acciones</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                using (Html.BeginForm("editDetalleDevolución", "Finanzas"))
+                                {
+
+                            <tr>
+                                <th scope="row">@item.Id_devolucion
+                                    <input hidden name="id" value="@item.Id_devolucion">
+                                </th>
+                                <td>@item.Ventas.Clientes.Nombre</td>
+                                <td>@item.Ventas.Total</td>
+                                <td>@item.Ventas.FechaVenta</td>
+                                <td>@item.Motivos</td>
+                                <td>
+                                    <a href="@Url.Action("detalleDevolución", "Finanzas", new { id = item.Id_devolucion })">Ver</a>
+                                </td>
+                                <td><input class="form-control" name="observaciones"></td>
+                                <td>
+                                    <div class="btn-group" role="group" aria-label="Basic example">
+                                        <input type="submit" class="btn btn-primary  btn-sm" value="Autorizar" name="estatus">
+                                        <input type="submit" class="btn btn-danger btn-sm" value="No autorizar" name="estatus">
+                                    </div>
+                                </td>
+                            </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
