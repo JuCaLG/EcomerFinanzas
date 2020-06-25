@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Ecommerce.Models.Historial_prudcto>
+@{
+    ViewBag.Title = "autorizarPrecio";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div class="container-fluid mt--2">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <!-- Card header -->
+                <div class="card-header border-0">
+                    <h3 class="mb-0">Cambio de precios por autorizar</h3>
+                </div>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Precio anterior</th>
+                                <th scope="col">Nuevo precio</th>
+                                <th scope="col">Descuento</th>
+                                <th scope="col">Fecha solicitado</th>
+                                <th scope="col">Razon </th>
+                                <th scope="col">Historial</th>
+                                <th scope="col">Observaciones</th>
+                                <th scope="col">Acciones</th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                using (Html.BeginForm("editAutorizarPrecio", "Finanzas"))
+                                {
+
+                            <tr>
+                                <th scope="row">@item.Id_producto
+                                     <input hidden name="id" value="@item.Id">
+                                       </th>
+                                <td>@item.Productos.Nombre</td>
+                                <td>@item.Anterior_Precio</td>
+                                <td>@item.Nuevo_precio</td>
+                                <th>@item.Descuento %</th>
+                                <td>@item.Fecha_autorizado</td>
+                                <td>@item.Razon</td>
+                                <td>
+                                    <a href="@Url.Action("historialProductos", "Finanzas", new { id = item.Productos.Id })">Ver</a>
+                                </td>
+                                <td><input class="form-control" name="observaciones"></td>
+                                <td>
+                                    <div class="btn-group" role="group" aria-label="Basic example">
+                                        <input type="submit" class="btn btn-primary  btn-sm" value="Autorizar" name="estatus">
+                                        <input type="submit" class="btn btn-danger btn-sm" value="No autorizar" name="estatus">
+                                    </div>
+                                </td>
+                            </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

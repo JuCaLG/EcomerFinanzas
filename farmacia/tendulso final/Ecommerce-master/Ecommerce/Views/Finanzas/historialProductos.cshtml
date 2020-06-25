@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Ecommerce.Models.Historial_prudcto>
+@{
+    ViewBag.Title = "Historial de Precio";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<br />
+<a href="@Url.Action("autorizarPrecio","Finanzas")">Regresar</a>
+<br />
+<br />
+<div class="container-fluid mt--6">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <!-- Card header -->
+                <div class="card-header border-0">
+                    <h3 class="mb-0">Historial Precio</h3>
+                </div>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Precio anterior</th>
+                                <th scope="col">Nuevo precio</th>
+                                <th scope="col">Descuento</th>
+                                <th scope="col">Fecha de Actualización </th>
+                                <th scope="col">Razon </th>
+                                <th scope="col">Estatus</th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <th scope="row">@item.Id_producto</th>
+                                    <td>@item.Productos.Nombre</td>
+                                    <td>@item.Anterior_Precio</td>
+                                    <td>@item.Nuevo_precio</td>
+                                    <th>@item.Descuento</th>
+                                    <td>@item.Fecha_autorizado</td>
+                                    <td>@item.Razon</td>
+                                    @if (@item.Autorizacion == 1)
+                                    {
+                                        <td>No autorizado</td>
+                                    }
+                                    else if (@item.Autorizacion == 0)
+                                    {
+                                        <td>Autorizado</td>
+                                    }
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

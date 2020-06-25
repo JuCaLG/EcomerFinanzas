@@ -1,0 +1,53 @@
+﻿
+@model Ecommerce.Models.Devoluciones
+@{
+    ViewBag.Title = "detalleDevolución";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+
+<br />
+<a href="@Url.Action("devoluciones","Finanzas")">Regresar</a>
+<br />
+<br />
+<div class="container-fluid mt--6">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <!-- Card header -->
+                <div class="card-header border-0">
+                    <h3 class="mb-0">Detalle de devolución</h3>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Producto</th>
+                                <th scope="col">Cantidad</th>
+                                <th scope="col">Costo</th>
+                                <th scope="col">Subtotal</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Ventas.DetalleVentas)
+                            {
+                                <tr>
+                                    <th scope="row">@item.Productos.Id</th>
+                                    <td>@item.Productos.Nombre</td>
+                                    <td>@item.Cantidad</td>
+                                    <td>@item.PrecioProd</td>
+                                    <td>@(item.PrecioProd * item.Cantidad)</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
